@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import {Button, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap'
-
+import { emitter } from "../../utils/emitter";
 class ModalUser extends Component {
 
     constructor(props) {
@@ -14,6 +14,18 @@ class ModalUser extends Component {
             lastname:'',
             address:''
         }
+        this.listenToEmitter();
+    }
+    listenToEmitter(){
+        emitter.on('EVENT_CLEAR_MODAL_DATA', () => {
+            this.setState({
+                email: '',
+                password: '',
+                firstname:'',
+                lastname:'',
+                address:''
+            })
+        });
     }
     componentDidMount() {
     }
@@ -68,26 +80,31 @@ class ModalUser extends Component {
                         <div className='input-container'>
                             <label>Email</label>
                             <input type='text' onChange={(event) => {this.handleOnChangeInput(event, "email")}}
+                             value={this.state.email}
                             />
                         </div>
                         <div className='input-container'>
                             <label>Password</label>
                             <input type='password' onChange={(event) => {this.handleOnChangeInput(event, "password")}}
+                             value={this.state.password}
                             />
                         </div>
                         <div className='input-container'>
                             <label>First Name</label>
                             <input type='text' onChange={(event) => {this.handleOnChangeInput(event, "firstname")}}
+                             value={this.state.firstname}
                             />
                         </div>
                         <div className='input-container'>
                             <label>Last Name</label>
                             <input type='text' onChange={(event) => {this.handleOnChangeInput(event, "lastname")}}
+                             value={this.state.lastname}
                             />
                         </div>
                         <div className='input-container max-width-input'>
                             <label>Address</label>
                             <input type='text' onChange={(event) => {this.handleOnChangeInput(event, "address")}}
+                             value={this.state.address}
                              />
                         </div>
                     </div>
