@@ -11,7 +11,7 @@ export const adminMenu = [
               
             },
             {
-                name: 'menu.admin.manage-doctor', link: '/system/user-doctor',
+                name: 'menu.admin.manage-doctor', link: '/system/manage-doctor',
                 // subMenus: [
                 //     { name: 'menu.system.system-administrator.user-manage', link: '/system/user-manage' },
                 //     { name: 'menu.system.system-administrator.user-redux', link: '/system/user-redux' },
@@ -40,11 +40,11 @@ export const adminMenu = [
             },
           
         ]
-    },
+    },  
     { //Quản lý cẩm nang
         name: 'menu.admin.handbook', 
         menus: [
-            {
+            { 
                 name: 'menu.admin.manage-handbook', link: '/system/manage-handbook',
             },
           
