@@ -1,6 +1,6 @@
 import actionTypes from './actionTypes';
 import { getAllCodeService, createNewUserService, getAllUsers, deleteUserService,editUserService,getTopDoctorHomeService ,
-          getAllDoctors,saveDetailDoctor} from '../../services/userService';
+          getAllDoctors,saveDetailDoctor,getDetailInforDoctor} from '../../services/userService';
 import { toast } from "react-toastify";
 
 // export const fetchGenderStart = () => ({
@@ -271,6 +271,30 @@ export const saveDetailDoctorAction = (data) => {
             console.log('SAVE_DETAIL_DOCKERS_FAILED', e);
             dispatch({
                 type: actionTypes.SAVE_DETAIL_DOCKERS_FAILED
+            })
+        }
+    }
+}
+
+export const fetchDetailDoctor = (id) => {
+    return async(dispatch, getState) => { 
+        try {
+            let res = await getDetailInforDoctor(id);
+            if(res && res.errCode === 0) {
+                dispatch({
+                    type: actionTypes.FETCH_DETAIL_DOCTOR_SUCCESS,
+                    detailDoctor: res.data
+                })
+            } else {
+                dispatch({
+                    type: actionTypes.FETCH_DETAIL_DOCKER_FAILED
+                })
+            }
+           
+        }catch(e) {
+            console.log('FETCH_DETAIL_DOCKER_FAILED', e);
+            dispatch({
+                type: actionTypes.FETCH_DETAIL_DOCKER_FAILED
             })
         }
     }
