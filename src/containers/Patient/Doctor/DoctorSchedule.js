@@ -88,9 +88,7 @@ class DoctorSchedule extends Component {
                      allAvalableTime: res.data ? res.data : []
                  })
             } 
-            console.log('check res', res);
         }
-        console.log(event.target.value);
     }
 
     capitalizeFirstLetter(string) {
