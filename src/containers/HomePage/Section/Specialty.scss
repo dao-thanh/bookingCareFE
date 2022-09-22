@@ -1,53 +1,9 @@
-// .section-specialty {
-//     height: 330px;
-//     background: #f5f5f5;
-//     border: 1px solid red;
-//     margin: 0 100px;
-
-//     .section-container {
-//         margin: 0 280px;
-//         display: flex;
-//         flex-direction: column;
-//         .section-header{
-//             height: 60px;
-//             margin-bottom: 30px;
-//             padding-top: 30px;
-
-//             .title-section {
-//                 font-size: 22px;
-//                 font-weight: 600;
-//             }
-
-//             .btn-section {
-//                 float: right;
-//                 padding: 10px 15px;
-//                 display: block;
-//                 border: none;
-//                 outline: none;
-//                 background: #ebebeb;
-//                 color: black;
-//                 cursor: pointer;
-//                 text-transform: uppercase;
-//                 &:hover{
-//                     color: #fff;
-//                     background: #f7d800;
-//                 }
-//             }
-//         }
-//         .section-body{
-
-//             .section-customize{
-//                 .bg-image {
-//                     height: 150px;
-//                     width: 278px;
-//                     background: url('../../../assets/specialty/co-xuong-khop.jpg');
-//                     background-position: center center;
-//                     background-repeat: no-repeat;
-//                     background-size: cover;
-//                     background-color: #eee;
-//                 }
-//             }
-//         }
-//     }
-// }
-
+.sepcialty-child{
+    cursor: pointer;
+    .specialty-name {
+        padding: 10px 0;
+        &:hover {
+            color: #45c3d2
+        }
+    }
+}
